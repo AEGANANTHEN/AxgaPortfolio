@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AxgaNanthen Sai | Software Engineer & Cybersecurity</title>
+    <title>Aegananthen Sai BS | Software Engineer & Cybersecurity</title>
 
     <meta name="description"
-          content="Portfolio of AxgaNanthen Sai — Computer Science Engineering student specializing in Software Development, Cybersecurity and Digital Forensics.">
+        content="Portfolio of Aegananthen Sai BS — Computer Science Engineering student specializing in Software Development, Cybersecurity and Digital Forensics.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
 
     <style>
 
-        /* =========================================================
+        /* =========================
            GLOBAL
-        ========================================================= */
+        ========================= */
 
         * {
             margin: 0;
@@ -32,7 +32,6 @@
             --bg: #050912;
             --bg-light: #08111f;
             --card: rgba(14, 24, 40, 0.72);
-            --card-solid: #0d1727;
             --border: rgba(255,255,255,0.09);
 
             --text: #f5f7fb;
@@ -54,6 +53,7 @@
 
         body {
             font-family: "Inter", sans-serif;
+
             background:
                 radial-gradient(
                     circle at 75% 15%,
@@ -68,7 +68,9 @@
                 var(--bg);
 
             color: var(--text);
+
             line-height: 1.6;
+
             overflow-x: hidden;
         }
 
@@ -88,18 +90,20 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            NAVBAR
-        ========================================================= */
+        ========================= */
 
         nav {
             position: fixed;
             top: 0;
             left: 0;
+
             width: 100%;
             height: 70px;
 
             background: rgba(5,9,18,0.82);
+
             backdrop-filter: blur(18px);
 
             border-bottom: 1px solid var(--border);
@@ -109,30 +113,35 @@
 
         .nav-container {
             height: 100%;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        /* PROFILE IMAGE IN TOP LEFT */
-
         .brand {
             display: flex;
             align-items: center;
+
             gap: 12px;
+
             font-size: 18px;
             font-weight: 700;
         }
 
+        /* TOP LEFT PROFILE PHOTO */
+
         .brand-photo {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
 
             border-radius: 50%;
 
             object-fit: cover;
 
-            border: 2px solid rgba(79,140,255,0.6);
+            object-position: center top;
+
+            border: 2px solid rgba(79,140,255,0.65);
 
             box-shadow:
                 0 0 18px rgba(79,140,255,0.25);
@@ -145,24 +154,29 @@
         .nav-links {
             display: flex;
             align-items: center;
+
             gap: 30px;
+
             list-style: none;
         }
 
         .nav-links a {
             color: var(--text-light);
+
             font-size: 14px;
+
             transition: 0.3s ease;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: #fff;
+            color: #ffffff;
         }
 
         .nav-buttons {
             display: flex;
             align-items: center;
+
             gap: 12px;
         }
 
@@ -171,12 +185,15 @@
             height: 38px;
 
             border: 1px solid var(--border);
+
             border-radius: 50%;
 
             background: rgba(255,255,255,0.05);
+
             color: white;
 
             cursor: pointer;
+
             font-size: 16px;
         }
 
@@ -188,6 +205,7 @@
             background: var(--gradient);
 
             color: white;
+
             font-size: 13px;
             font-weight: 600;
 
@@ -196,7 +214,9 @@
 
         .cv-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(79,140,255,0.25);
+
+            box-shadow:
+                0 10px 30px rgba(79,140,255,0.25);
         }
 
         .menu-btn {
@@ -204,16 +224,18 @@
 
             background: none;
             border: none;
+
             color: white;
 
             font-size: 25px;
+
             cursor: pointer;
         }
 
 
-        /* =========================================================
+        /* =========================
            HERO
-        ========================================================= */
+        ========================= */
 
         .hero {
             min-height: 100vh;
@@ -224,6 +246,7 @@
             align-items: center;
 
             position: relative;
+
             overflow: hidden;
         }
 
@@ -257,6 +280,7 @@
 
         .hero-content {
             position: relative;
+
             z-index: 2;
         }
 
@@ -264,6 +288,7 @@
             color: var(--blue);
 
             font-size: 24px;
+
             font-weight: 600;
 
             margin-bottom: 8px;
@@ -307,6 +332,7 @@
 
         .hero-buttons {
             display: flex;
+
             gap: 14px;
 
             margin-bottom: 30px;
@@ -349,6 +375,7 @@
 
         .social-links {
             display: flex;
+
             gap: 10px;
         }
 
@@ -357,6 +384,7 @@
             height: 42px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
@@ -380,9 +408,9 @@
         }
 
 
-        /* =========================================================
-           HERO IMAGE
-        ========================================================= */
+        /* =========================
+           HERO PHOTO
+        ========================= */
 
         .hero-image {
             position: relative;
@@ -392,6 +420,7 @@
             display: flex;
 
             align-items: flex-end;
+
             justify-content: center;
         }
 
@@ -423,6 +452,7 @@
             z-index: 2;
 
             height: 540px;
+
             width: 430px;
 
             object-fit: cover;
@@ -443,9 +473,9 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            SECTIONS
-        ========================================================= */
+        ========================= */
 
         section {
             padding: 90px 0;
@@ -466,9 +496,9 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            ABOUT
-        ========================================================= */
+        ========================= */
 
         .about-grid {
             display: grid;
@@ -521,15 +551,14 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            WHAT I DO
-        ========================================================= */
+        ========================= */
 
         .services-grid {
             display: grid;
 
-            grid-template-columns:
-                repeat(3,1fr);
+            grid-template-columns: repeat(3,1fr);
 
             gap: 20px;
         }
@@ -552,7 +581,8 @@
             border-color:
                 rgba(79,140,255,0.4);
 
-            background: rgba(17,30,50,0.8);
+            background:
+                rgba(17,30,50,0.8);
         }
 
         .service-icon {
@@ -560,6 +590,7 @@
             height: 50px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
@@ -588,9 +619,9 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            SKILLS
-        ========================================================= */
+        ========================= */
 
         .skills-grid {
             display: grid;
@@ -611,6 +642,7 @@
             border-radius: 9px;
 
             display: flex;
+
             align-items: center;
 
             gap: 10px;
@@ -632,12 +664,14 @@
             color: var(--blue);
 
             font-weight: 700;
+
+            font-size: 12px;
         }
 
 
-        /* =========================================================
+        /* =========================
            PROJECTS
-        ========================================================= */
+        ========================= */
 
         .projects-grid {
             display: grid;
@@ -729,9 +763,9 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            EXPERIENCE + EDUCATION
-        ========================================================= */
+        ========================= */
 
         .two-column {
             display: grid;
@@ -752,7 +786,9 @@
             position: absolute;
 
             left: 7px;
+
             top: 10px;
+
             bottom: 10px;
 
             width: 1px;
@@ -773,6 +809,7 @@
             position: absolute;
 
             left: 0;
+
             top: 6px;
 
             width: 15px;
@@ -828,9 +865,9 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            CERTIFICATIONS
-        ========================================================= */
+        ========================= */
 
         .cert-grid {
             display: grid;
@@ -849,6 +886,14 @@
             border: 1px solid var(--border);
 
             border-radius: 10px;
+
+            transition: 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-4px);
+
+            border-color: var(--blue);
         }
 
         .cert-card h3 {
@@ -864,9 +909,9 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            LEADERSHIP
-        ========================================================= */
+        ========================= */
 
         .leadership-card {
             padding: 30px;
@@ -886,9 +931,11 @@
 
         .leadership-icon {
             min-width: 65px;
+
             height: 65px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
@@ -915,9 +962,9 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            CONTACT
-        ========================================================= */
+        ========================= */
 
         .contact {
             text-align: center;
@@ -955,16 +1002,20 @@
             color: var(--text-light);
 
             font-size: 14px;
+
+            transition: 0.3s ease;
         }
 
         .contact-item:hover {
             border-color: var(--blue);
+
+            transform: translateY(-2px);
         }
 
 
-        /* =========================================================
+        /* =========================
            FOOTER
-        ========================================================= */
+        ========================= */
 
         footer {
             border-top: 1px solid var(--border);
@@ -979,9 +1030,9 @@
         }
 
 
-        /* =========================================================
-           SCROLL REVEAL
-        ========================================================= */
+        /* =========================
+           REVEAL ANIMATION
+        ========================= */
 
         .reveal {
             opacity: 0;
@@ -1000,9 +1051,9 @@
         }
 
 
-        /* =========================================================
+        /* =========================
            RESPONSIVE
-        ========================================================= */
+        ========================= */
 
         @media(max-width: 900px) {
 
@@ -1010,6 +1061,7 @@
                 position: absolute;
 
                 top: 70px;
+
                 left: 0;
 
                 width: 100%;
@@ -1053,6 +1105,7 @@
 
             .hero-description {
                 margin-left: auto;
+
                 margin-right: auto;
             }
 
@@ -1099,7 +1152,7 @@
         @media(max-width: 600px) {
 
             .brand-name {
-                font-size: 15px;
+                font-size: 14px;
             }
 
             .brand-photo {
@@ -1112,7 +1165,7 @@
             }
 
             .hero h1 {
-                font-size: 45px;
+                font-size: 44px;
 
                 letter-spacing: -2px;
             }
@@ -1190,15 +1243,14 @@
 
         <a href="#home" class="brand">
 
-            <!-- YOUR PROFILE IMAGE -->
             <img
                 src="profile.jpg"
-                alt="AxgaNanthen Sai"
+                alt="Aegananthen Sai BS"
                 class="brand-photo"
             >
 
             <div class="brand-name">
-                AxgaNanthen <span>Sai</span>
+                Aegananthen <span>Sai BS</span>
             </div>
 
         </a>
@@ -1207,31 +1259,45 @@
         <ul class="nav-links" id="navLinks">
 
             <li>
-                <a href="#home" class="active">Home</a>
+                <a href="#home" class="active">
+                    Home
+                </a>
             </li>
 
             <li>
-                <a href="#about">About</a>
+                <a href="#about">
+                    About
+                </a>
             </li>
 
             <li>
-                <a href="#skills">Skills</a>
+                <a href="#skills">
+                    Skills
+                </a>
             </li>
 
             <li>
-                <a href="#projects">Projects</a>
+                <a href="#projects">
+                    Projects
+                </a>
             </li>
 
             <li>
-                <a href="#experience">Experience</a>
+                <a href="#experience">
+                    Experience
+                </a>
             </li>
 
             <li>
-                <a href="#education">Education</a>
+                <a href="#education">
+                    Education
+                </a>
             </li>
 
             <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact">
+                    Contact
+                </a>
             </li>
 
         </ul>
@@ -1243,13 +1309,17 @@
                 class="theme-btn"
                 id="themeBtn"
                 title="Toggle theme">
+
                 ☾
+
             </button>
 
             <a
                 href="#contact"
                 class="cv-btn">
+
                 Contact Me
+
             </a>
 
         </div>
@@ -1258,7 +1328,9 @@
         <button
             class="menu-btn"
             id="menuBtn">
+
             ☰
+
         </button>
 
     </div>
@@ -1284,8 +1356,8 @@
 
 
             <h1>
-                AxgaNanthen
-                <span>Sai.</span>
+                Aegananthen
+                <span>Sai BS.</span>
             </h1>
 
 
@@ -1295,10 +1367,13 @@
 
 
             <p class="hero-description">
-                Final-year Computer Science Engineering student specializing
-                in Cybersecurity and Digital Forensics. I enjoy building
-                secure, scalable and impactful software solutions while
-                continuously exploring new technologies.
+
+                Final-year Computer Science Engineering student
+                specializing in Cybersecurity and Digital Forensics.
+                I enjoy building secure, scalable and impactful
+                software solutions while continuously exploring
+                new technologies.
+
             </p>
 
 
@@ -1307,13 +1382,18 @@
                 <a
                     href="#projects"
                     class="primary-btn">
+
                     View My Work →
+
                 </a>
+
 
                 <a
                     href="#contact"
                     class="secondary-btn">
+
                     Contact Me
+
                 </a>
 
             </div>
@@ -1325,26 +1405,37 @@
                     href="https://github.com/AEGANANTHEN"
                     target="_blank"
                     title="GitHub">
+
                     GH
+
                 </a>
+
 
                 <a
                     href="https://www.linkedin.com/in/aegananthen-sai-735301329/"
                     target="_blank"
                     title="LinkedIn">
+
                     in
+
                 </a>
+
 
                 <a
                     href="mailto:bsaegananthensai@gmail.com"
                     title="Email">
+
                     @
+
                 </a>
+
 
                 <a
                     href="#projects"
                     title="Projects">
+
                     &lt;/&gt;
+
                 </a>
 
             </div>
@@ -1353,13 +1444,13 @@
 
 
 
-        <!-- HERO PROFILE PHOTO -->
+        <!-- LARGE PROFILE PHOTO -->
 
         <div class="hero-image reveal">
 
             <img
                 src="profile.jpg"
-                alt="Professional portrait of AxgaNanthen Sai"
+                alt="Professional portrait of Aegananthen Sai BS"
                 class="profile-photo"
             >
 
@@ -1390,22 +1481,23 @@
             <div class="about-text">
 
                 <p>
-                    I am a final-year Computer Science Engineering student
-                    specializing in Cybersecurity and Digital Forensics.
-                    I enjoy building web applications, solving programming
-                    problems and exploring cybersecurity.
+                    I am a final-year Computer Science Engineering
+                    student specializing in Cybersecurity and
+                    Digital Forensics.
                 </p>
 
                 <p>
-                    My interests include software development, backend
-                    engineering, cybersecurity, digital forensics and
-                    creating practical solutions to real-world problems.
+                    I enjoy building web applications, solving
+                    programming problems and exploring cybersecurity.
+                    My interests include software development,
+                    backend engineering, cybersecurity and digital
+                    forensics.
                 </p>
 
                 <p>
-                    I am continuously learning and working on projects that
-                    challenge me to improve my technical and problem-solving
-                    abilities.
+                    I am continuously learning and working on
+                    projects that challenge me to improve my
+                    technical and problem-solving abilities.
                 </p>
 
             </div>
@@ -1414,38 +1506,55 @@
 
             <div class="info-grid">
 
+
                 <div class="info-box">
 
-                    <small>Location</small>
+                    <small>
+                        Location
+                    </small>
 
-                    <strong>India</strong>
+                    <strong>
+                        India
+                    </strong>
 
                 </div>
 
 
                 <div class="info-box">
 
-                    <small>Education</small>
+                    <small>
+                        Education
+                    </small>
 
-                    <strong>B.Tech CSE</strong>
-
-                </div>
-
-
-                <div class="info-box">
-
-                    <small>Specialization</small>
-
-                    <strong>Cybersecurity</strong>
+                    <strong>
+                        B.Tech CSE
+                    </strong>
 
                 </div>
 
 
                 <div class="info-box">
 
-                    <small>CGPA</small>
+                    <small>
+                        Specialization
+                    </small>
 
-                    <strong>8.86</strong>
+                    <strong>
+                        Cybersecurity
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <small>
+                        CGPA
+                    </small>
+
+                    <strong>
+                        8.86
+                    </strong>
 
                 </div>
 
@@ -1486,12 +1595,13 @@
                 </h3>
 
                 <p>
-                    Building responsive applications, backend services,
-                    REST APIs and practical software solutions using
-                    modern development technologies.
+                    Building responsive applications, backend
+                    services, REST APIs and practical software
+                    solutions using modern development technologies.
                 </p>
 
             </div>
+
 
 
             <div class="service-card">
@@ -1511,6 +1621,7 @@
                 </p>
 
             </div>
+
 
 
             <div class="service-card">
@@ -1689,17 +1800,28 @@
                 </h3>
 
                 <p>
-                    AI-powered teaching assistant designed to support
-                    rural and multi-grade classrooms with multilingual
-                    educational content generation.
+                    AI-powered teaching assistant designed to
+                    support rural and multi-grade classrooms with
+                    multilingual educational content generation.
                 </p>
 
                 <div class="tags">
 
-                    <span class="tag">AI</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">Supabase</span>
-                    <span class="tag">Multilingual</span>
+                    <span class="tag">
+                        AI
+                    </span>
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        Supabase
+                    </span>
+
+                    <span class="tag">
+                        Multilingual
+                    </span>
 
                 </div>
 
@@ -1729,17 +1851,28 @@
                 </h3>
 
                 <p>
-                    Full-stack web application that analyzes URLs using
-                    rule-based phishing indicators and classifies them
-                    as Safe, Suspicious or Dangerous.
+                    Full-stack web application that analyzes URLs
+                    using rule-based phishing indicators and
+                    classifies them as Safe, Suspicious or Dangerous.
                 </p>
 
                 <div class="tags">
 
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Cybersecurity</span>
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
+
+                    <span class="tag">
+                        JavaScript
+                    </span>
+
+                    <span class="tag">
+                        Cybersecurity
+                    </span>
 
                 </div>
 
@@ -1769,17 +1902,28 @@
                 </h3>
 
                 <p>
-                    Digital forensics evidence management system for
-                    centralized case management, investigators,
+                    Digital forensics evidence management system
+                    for centralized case management, investigators,
                     evidence uploads and secure storage.
                 </p>
 
                 <div class="tags">
 
-                    <span class="tag">Security</span>
-                    <span class="tag">Digital Forensics</span>
-                    <span class="tag">Database</span>
-                    <span class="tag">Authentication</span>
+                    <span class="tag">
+                        Security
+                    </span>
+
+                    <span class="tag">
+                        Digital Forensics
+                    </span>
+
+                    <span class="tag">
+                        Database
+                    </span>
+
+                    <span class="tag">
+                        Authentication
+                    </span>
 
                 </div>
 
@@ -1804,7 +1948,7 @@
 
 
 <!-- =========================================================
-     EXPERIENCE
+     EXPERIENCE + EDUCATION
 ========================================================= -->
 
 <section id="experience">
@@ -1853,10 +1997,11 @@
                         </div>
 
                         <p>
-                            Worked with Java, Python, OOP, data structures,
-                            exception handling, SQL, database concepts,
-                            backend development, HTML/CSS, Git/GitHub,
-                            debugging and software development practices.
+                            Worked with Java, Python, OOP, data
+                            structures, exception handling, SQL,
+                            database concepts, backend development,
+                            HTML/CSS, Git/GitHub, debugging and
+                            software development practices.
                         </p>
 
                     </div>
@@ -1884,8 +2029,9 @@
                         </div>
 
                         <p>
-                            Worked with cybersecurity processes, security
-                            practices and practical cybersecurity tasks.
+                            Worked with cybersecurity processes,
+                            security practices and practical
+                            cybersecurity tasks.
                         </p>
 
                     </div>
@@ -1933,7 +2079,9 @@
                         <p>
                             Specialization:
                             Cyber Security and Digital Forensics
+
                             <br><br>
+
                             CGPA: 8.86
                         </p>
 
@@ -1981,6 +2129,7 @@
             </div>
 
 
+
             <div class="cert-card">
 
                 <h3>
@@ -1992,6 +2141,7 @@
                 </p>
 
             </div>
+
 
 
             <div class="cert-card">
@@ -2046,9 +2196,11 @@
                 </p>
 
                 <p style="margin-top:8px;">
-                    Involved in volunteer management, responsibility
-                    allocation, crowd management and security coordination
-                    under event management.
+
+                    Involved in volunteer management,
+                    responsibility allocation, crowd management
+                    and security coordination under event management.
+
                 </p>
 
             </div>
@@ -2141,7 +2293,7 @@
 
     <div class="container">
 
-        © 2026 AxgaNanthen Sai. All Rights Reserved.
+        © 2026 Aegananthen Sai BS. All Rights Reserved.
 
     </div>
 
@@ -2155,10 +2307,9 @@
 
 <script>
 
-
-    /* =========================================================
+    /* =========================
        MOBILE MENU
-    ========================================================= */
+    ========================= */
 
     const menuBtn =
         document.getElementById("menuBtn");
@@ -2174,8 +2325,6 @@
     });
 
 
-    /* Close mobile menu after clicking */
-
     document
         .querySelectorAll(".nav-links a")
         .forEach(link => {
@@ -2190,9 +2339,9 @@
 
 
 
-    /* =========================================================
+    /* =========================
        ACTIVE NAVIGATION
-    ========================================================= */
+    ========================= */
 
     const sections =
         document.querySelectorAll("section");
@@ -2241,9 +2390,9 @@
 
 
 
-    /* =========================================================
+    /* =========================
        SCROLL REVEAL
-    ========================================================= */
+    ========================= */
 
     const revealElements =
         document.querySelectorAll(".reveal");
@@ -2285,9 +2434,9 @@
 
 
 
-    /* =========================================================
+    /* =========================
        THEME BUTTON
-    ========================================================= */
+    ========================= */
 
     const themeBtn =
         document.getElementById("themeBtn");
@@ -2298,6 +2447,7 @@
         document.body.classList.toggle(
             "light-mode"
         );
+
 
         if (
             document.body.classList.contains(
@@ -2326,7 +2476,6 @@
         }
 
     });
-
 
 </script>
 
