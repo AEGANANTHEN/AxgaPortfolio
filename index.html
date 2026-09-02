@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>AxgaNanthen Sai | Software Engineer & Cybersecurity</title>
 
     <meta name="description"
-          content="Aegananthen Sai — Software Developer, Cybersecurity Enthusiast and Digital Forensics Student.">
+          content="Portfolio of AxgaNanthen Sai — Computer Science Engineering student specializing in Software Development, Cybersecurity and Digital Forensics.">
 
-    <meta name="author"
-          content="Aegananthen Sai">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>AeganAnthen Sai | Developer & Cybersecurity</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
     <style>
 
         /* =========================================================
-           RESET
+           GLOBAL
         ========================================================= */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
+        :root {
+            --bg: #050912;
+            --bg-light: #08111f;
+            --card: rgba(14, 24, 40, 0.72);
+            --card-solid: #0d1727;
+            --border: rgba(255,255,255,0.09);
+
+            --text: #f5f7fb;
+            --text-light: #c5cad5;
+            --text-muted: #8993a4;
+
+            --blue: #4f8cff;
+            --purple: #7547ff;
+            --cyan: #22d3ee;
+
+            --gradient: linear-gradient(
+                135deg,
+                #3b82f6,
+                #7c3aed
+            );
+
+            --max-width: 1180px;
+        }
+
         body {
-            font-family:
-                Inter,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(
+                    circle at 75% 15%,
+                    rgba(59,130,246,0.12),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 15% 45%,
+                    rgba(124,58,237,0.07),
+                    transparent 25%
+                ),
+                var(--bg);
 
-            background: #070707;
-            color: #f5f5f5;
-
+            color: var(--text);
             line-height: 1.6;
-
             overflow-x: hidden;
         }
 
@@ -54,232 +77,137 @@
             color: inherit;
         }
 
-        button {
-            font-family: inherit;
+        img {
+            max-width: 100%;
+            display: block;
         }
-
-
-        /* =========================================================
-           VARIABLES
-        ========================================================= */
-
-        :root {
-
-            --background: #070707;
-
-            --surface: #0d0d0d;
-
-            --surface-light: #121212;
-
-            --border: #222222;
-
-            --border-light: #2d2d2d;
-
-            --text: #f5f5f5;
-
-            --muted: #969696;
-
-            --muted-dark: #6f6f6f;
-
-            --accent: #ffffff;
-
-            --green: #73e6a3;
-
-            --max-width: 1180px;
-
-        }
-
-
-        /* =========================================================
-           CONTAINER
-        ========================================================= */
 
         .container {
-
-            width: 90%;
-
-            max-width: var(--max-width);
-
+            width: min(92%, var(--max-width));
             margin: auto;
-
         }
 
 
         /* =========================================================
-           BACKGROUND
+           NAVBAR
         ========================================================= */
-
-        body::before {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: -5;
-
-            pointer-events: none;
-
-            background:
-
-                radial-gradient(
-                    circle at 20% 10%,
-                    rgba(255,255,255,0.035),
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(255,255,255,0.025),
-                    transparent 30%
-                );
-
-        }
-
-
-        /* =========================================================
-           HEADER
-        ========================================================= */
-
-        header {
-
-            position: fixed;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            z-index: 1000;
-
-            background:
-                rgba(7,7,7,0.75);
-
-            backdrop-filter:
-                blur(15px);
-
-            border-bottom:
-                1px solid transparent;
-
-            transition:
-                0.3s ease;
-
-        }
-
-
-        header.scrolled {
-
-            border-bottom:
-                1px solid var(--border);
-
-            background:
-                rgba(7,7,7,0.94);
-
-        }
-
 
         nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
 
-            height: 78px;
+            background: rgba(5,9,18,0.82);
+            backdrop-filter: blur(18px);
 
+            border-bottom: 1px solid var(--border);
+
+            z-index: 1000;
+        }
+
+        .nav-container {
+            height: 100%;
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
         }
 
+        /* PROFILE IMAGE IN TOP LEFT */
 
-        .logo {
-
-            font-size: 20px;
-
-            font-weight: 800;
-
-            letter-spacing: -1px;
-
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 700;
         }
 
+        .brand-photo {
+            width: 40px;
+            height: 40px;
 
-        .logo span {
+            border-radius: 50%;
 
-            color: #888;
+            object-fit: cover;
 
+            border: 2px solid rgba(79,140,255,0.6);
+
+            box-shadow:
+                0 0 18px rgba(79,140,255,0.25);
         }
 
+        .brand-name span {
+            color: var(--blue);
+        }
 
         .nav-links {
-
             display: flex;
-
             align-items: center;
-
-            gap: 32px;
-
+            gap: 30px;
             list-style: none;
-
         }
-
 
         .nav-links a {
-
-            color: var(--muted);
-
-            font-size: 13px;
-
-            transition: 0.3s;
-
+            color: var(--text-light);
+            font-size: 14px;
+            transition: 0.3s ease;
         }
 
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+        }
 
-        .nav-links a:hover {
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
+        .theme-btn {
+            width: 38px;
+            height: 38px;
+
+            border: 1px solid var(--border);
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.05);
             color: white;
 
+            cursor: pointer;
+            font-size: 16px;
         }
 
+        .cv-btn {
+            padding: 10px 18px;
 
-        .nav-contact {
+            border-radius: 25px;
 
-            border:
-                1px solid var(--border-light);
+            background: var(--gradient);
 
-            padding:
-                9px 16px;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
 
-            border-radius: 5px;
-
-            color: white !important;
-
+            transition: 0.3s ease;
         }
 
-
-        .nav-contact:hover {
-
-            background: white;
-
-            color: black !important;
-
+        .cv-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(79,140,255,0.25);
         }
 
-
-        .menu-button {
-
+        .menu-btn {
             display: none;
 
             background: none;
-
             border: none;
-
             color: white;
 
-            font-size: 24px;
-
+            font-size: 25px;
             cursor: pointer;
-
         }
 
 
@@ -287,378 +215,254 @@
            HERO
         ========================================================= */
 
-        #home {
-
+        .hero {
             min-height: 100vh;
 
-            display: flex;
-
-            align-items: center;
-
-            padding-top: 100px;
-
-        }
-
-
-        .hero {
-
-            display: grid;
-
-            grid-template-columns:
-                1.2fr
-                0.8fr;
-
-            gap: 70px;
-
-            align-items: center;
-
-        }
-
-
-        .hero-small {
-
-            color: var(--muted);
-
-            font-size: 13px;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .hero h1 {
-
-            font-size:
-                clamp(55px, 8vw, 105px);
-
-            line-height:
-                0.95;
-
-            letter-spacing:
-                -6px;
-
-            font-weight:
-                800;
-
-            margin-bottom:
-                30px;
-
-        }
-
-
-        .hero h1 span {
-
-            display: block;
-
-            color: #777;
-
-        }
-
-
-        .hero-description {
-
-            color: var(--muted);
-
-            font-size: 17px;
-
-            max-width: 620px;
-
-            margin-bottom: 35px;
-
-        }
-
-
-        .hero-buttons {
+            padding-top: 70px;
 
             display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
-
-        }
-
-
-        .button {
-
-            display: inline-flex;
-
             align-items: center;
-
-            justify-content: center;
-
-            gap: 8px;
-
-            padding:
-                13px 20px;
-
-            border-radius: 5px;
-
-            font-size: 13px;
-
-            font-weight: 600;
-
-            transition: 0.3s;
-
-        }
-
-
-        .button-primary {
-
-            background: white;
-
-            color: black;
-
-        }
-
-
-        .button-primary:hover {
-
-            transform:
-                translateY(-3px);
-
-            background: #dddddd;
-
-        }
-
-
-        .button-secondary {
-
-            border:
-                1px solid var(--border-light);
-
-            color: white;
-
-        }
-
-
-        .button-secondary:hover {
-
-            border-color: white;
-
-            transform:
-                translateY(-3px);
-
-        }
-
-
-        /* =========================================================
-           HERO SIDE CARD
-        ========================================================= */
-
-        .hero-card {
 
             position: relative;
-
-            min-height: 390px;
-
-            border:
-                1px solid var(--border);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #101010,
-                    #080808
-                );
-
-            border-radius: 12px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
             overflow: hidden;
-
         }
 
-
-        .hero-card::before {
-
+        .hero::before {
             content: "";
 
             position: absolute;
 
-            width: 300px;
+            width: 550px;
+            height: 550px;
 
-            height: 300px;
+            right: -200px;
+            top: 100px;
+
+            background: rgba(59,130,246,0.08);
+
+            filter: blur(100px);
 
             border-radius: 50%;
-
-            border:
-                1px solid #333;
-
-            box-shadow:
-
-                0 0 0 50px rgba(255,255,255,0.01),
-
-                0 0 0 100px rgba(255,255,255,0.01);
-
         }
 
+        .hero-container {
+            display: grid;
 
-        .profile-symbol {
-
-            position: relative;
-
-            width: 160px;
-
-            height: 160px;
-
-            border:
-                1px solid #444;
-
-            border-radius: 50%;
-
-            display: flex;
+            grid-template-columns: 1fr 0.9fr;
 
             align-items: center;
 
+            gap: 40px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-small {
+            color: var(--blue);
+
+            font-size: 24px;
+            font-weight: 600;
+
+            margin-bottom: 8px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 6vw, 78px);
+
+            line-height: 1.05;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero-role {
+            font-size: 19px;
+
+            color: #55a2ff;
+
+            margin-bottom: 18px;
+
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 570px;
+
+            color: var(--text-light);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+
+            margin-bottom: 30px;
+        }
+
+        .primary-btn {
+            padding: 13px 23px;
+
+            border-radius: 7px;
+
+            background: var(--gradient);
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 35px rgba(79,140,255,0.25);
+        }
+
+        .secondary-btn {
+            padding: 13px 23px;
+
+            border-radius: 7px;
+
+            border: 1px solid rgba(255,255,255,0.18);
+
+            color: white;
+
+            transition: 0.3s ease;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
             justify-content: center;
 
-            background:
-                #0b0b0b;
+            border: 1px solid var(--border);
 
-            box-shadow:
-                0 0 70px rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.04);
 
+            border-radius: 8px;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
         }
 
+        .social-links a:hover {
+            transform: translateY(-3px);
 
-        .profile-symbol span {
+            border-color: var(--blue);
 
-            font-size: 54px;
-
-            font-weight: 800;
-
-            letter-spacing: -5px;
-
-        }
-
-
-        .hero-card-label {
-
-            position: absolute;
-
-            bottom: 20px;
-
-            left: 20px;
-
-            right: 20px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            color: var(--muted);
-
-            font-size: 11px;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1px;
-
-        }
-
-
-        .availability {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 7px;
-
-        }
-
-
-        .availability-dot {
-
-            width: 7px;
-
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: var(--green);
-
-            box-shadow:
-                0 0 10px var(--green);
-
+            color: var(--blue);
         }
 
 
         /* =========================================================
-           SECTION
+           HERO IMAGE
+        ========================================================= */
+
+        .hero-image {
+            position: relative;
+
+            height: 560px;
+
+            display: flex;
+
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hero-image::before {
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+            height: 430px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(59,130,246,0.22),
+                    transparent 65%
+                );
+
+            filter: blur(20px);
+
+            bottom: 20px;
+
+            z-index: 0;
+        }
+
+        .profile-photo {
+            position: relative;
+
+            z-index: 2;
+
+            height: 540px;
+            width: 430px;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            border-radius: 20px 20px 0 0;
+
+            filter:
+                contrast(1.02)
+                saturate(1.03);
+
+            mask-image: linear-gradient(
+                to bottom,
+                black 85%,
+                transparent 100%
+            );
+        }
+
+
+        /* =========================================================
+           SECTIONS
         ========================================================= */
 
         section {
+            padding: 90px 0;
 
-            padding:
-                120px 0;
-
+            border-top: 1px solid var(--border);
         }
 
+        .section-title {
+            font-size: 34px;
 
-        .section-header {
+            margin-bottom: 45px;
 
-            margin-bottom:
-                55px;
-
+            letter-spacing: -1px;
         }
 
-
-        .section-number {
-
-            color:
-                var(--muted-dark);
-
-            font-size:
-                12px;
-
-            letter-spacing:
-                2px;
-
-            margin-bottom:
-                12px;
-
-        }
-
-
-        .section-header h2 {
-
-            font-size:
-                clamp(35px, 5vw, 58px);
-
-            letter-spacing:
-                -3px;
-
-            line-height:
-                1;
-
-        }
-
-
-        .section-header p {
-
-            color:
-                var(--muted);
-
-            max-width:
-                600px;
-
-            margin-top:
-                17px;
-
-            font-size:
-                15px;
-
+        .section-title span {
+            color: var(--blue);
         }
 
 
@@ -667,113 +471,53 @@
         ========================================================= */
 
         .about-grid {
+            display: grid;
 
-            display:
-                grid;
+            grid-template-columns: 1.1fr 0.9fr;
 
-            grid-template-columns:
-                1fr
-                1fr;
+            gap: 50px;
 
-            gap:
-                80px;
-
+            align-items: start;
         }
-
-
-        .about-large {
-
-            font-size:
-                28px;
-
-            line-height:
-                1.4;
-
-            letter-spacing:
-                -1px;
-
-        }
-
-
-        .about-large span {
-
-            color:
-                #777;
-
-        }
-
 
         .about-text p {
+            color: var(--text-light);
 
-            color:
-                var(--muted);
+            font-size: 15px;
 
-            margin-bottom:
-                20px;
+            line-height: 1.9;
 
-            font-size:
-                15px;
-
+            margin-bottom: 18px;
         }
 
+        .info-grid {
+            display: grid;
 
-        .about-info {
+            grid-template-columns: repeat(2,1fr);
 
-            display:
-                grid;
-
-            grid-template-columns:
-                1fr
-                1fr;
-
-            gap:
-                1px;
-
-            background:
-                var(--border);
-
-            border:
-                1px solid var(--border);
-
+            gap: 12px;
         }
 
+        .info-box {
+            padding: 20px;
 
-        .info-item {
+            background: var(--card);
 
-            background:
-                var(--surface);
+            border: 1px solid var(--border);
 
-            padding:
-                25px;
-
+            border-radius: 10px;
         }
 
+        .info-box small {
+            color: var(--text-muted);
 
-        .info-label {
+            display: block;
 
-            color:
-                var(--muted-dark);
-
-            font-size:
-                11px;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                1px;
-
-            margin-bottom:
-                8px;
-
+            margin-bottom: 5px;
         }
 
-
-        .info-value {
-
-            font-size:
-                15px;
-
+        .info-box strong {
+            font-size: 14px;
         }
 
 
@@ -781,84 +525,66 @@
            WHAT I DO
         ========================================================= */
 
-        .services {
-
-            display:
-                grid;
+        .services-grid {
+            display: grid;
 
             grid-template-columns:
                 repeat(3,1fr);
 
-            gap:
-                1px;
+            gap: 20px;
+        }
+
+        .service-card {
+            padding: 30px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(79,140,255,0.4);
+
+            background: rgba(17,30,50,0.8);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
 
             background:
-                var(--border);
+                linear-gradient(
+                    135deg,
+                    rgba(59,130,246,0.2),
+                    rgba(124,58,237,0.2)
+                );
 
-            border:
-                1px solid var(--border);
+            margin-bottom: 20px;
 
+            font-size: 23px;
         }
 
-
-        .service {
-
-            background:
-                var(--surface);
-
-            padding:
-                35px;
-
-            min-height:
-                270px;
-
-            transition:
-                0.3s;
-
+        .service-card h3 {
+            margin-bottom: 10px;
         }
 
+        .service-card p {
+            color: var(--text-muted);
 
-        .service:hover {
-
-            background:
-                var(--surface-light);
-
-        }
-
-
-        .service-number {
-
-            color:
-                var(--muted-dark);
-
-            font-size:
-                12px;
-
-            margin-bottom:
-                55px;
-
-        }
-
-
-        .service h3 {
-
-            font-size:
-                22px;
-
-            margin-bottom:
-                12px;
-
-        }
-
-
-        .service p {
-
-            color:
-                var(--muted);
-
-            font-size:
-                14px;
-
+            font-size: 14px;
         }
 
 
@@ -866,189 +592,46 @@
            SKILLS
         ========================================================= */
 
-        .skills-layout {
-
-            display:
-                grid;
+        .skills-grid {
+            display: grid;
 
             grid-template-columns:
-                0.8fr
-                1.2fr;
+                repeat(4,1fr);
 
-            gap:
-                80px;
-
+            gap: 12px;
         }
-
-
-        .skills-intro {
-
-            color:
-                var(--muted);
-
-            font-size:
-                15px;
-
-        }
-
-
-        .skills-list {
-
-            display:
-                flex;
-
-            flex-wrap:
-                wrap;
-
-            gap:
-                10px;
-
-        }
-
 
         .skill {
+            padding: 15px;
 
-            padding:
-                12px 17px;
+            background: var(--card);
 
-            border:
-                1px solid var(--border-light);
+            border: 1px solid var(--border);
 
-            border-radius:
-                4px;
+            border-radius: 9px;
 
-            color:
-                #d0d0d0;
+            display: flex;
+            align-items: center;
 
-            font-size:
-                13px;
+            gap: 10px;
 
-            transition:
-                0.3s;
+            color: var(--text-light);
 
+            font-size: 14px;
+
+            transition: 0.3s ease;
         }
-
 
         .skill:hover {
+            border-color: var(--blue);
 
-            border-color:
-                #777;
-
-            color:
-                white;
-
-            transform:
-                translateY(-2px);
-
+            transform: translateY(-2px);
         }
 
+        .skill-icon {
+            color: var(--blue);
 
-        /* =========================================================
-           EXPERIENCE
-        ========================================================= */
-
-        .experience {
-
-            border-top:
-                1px solid var(--border);
-
-        }
-
-
-        .experience-item {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                180px
-                1fr
-                130px;
-
-            gap:
-                30px;
-
-            padding:
-                35px 0;
-
-            border-bottom:
-                1px solid var(--border);
-
-            transition:
-                0.3s;
-
-        }
-
-
-        .experience-item:hover {
-
-            padding-left:
-                10px;
-
-        }
-
-
-        .experience-date {
-
-            color:
-                var(--muted-dark);
-
-            font-size:
-                13px;
-
-        }
-
-
-        .experience-role {
-
-            font-size:
-                21px;
-
-            margin-bottom:
-                5px;
-
-        }
-
-
-        .experience-company {
-
-            color:
-                #aaa;
-
-            font-size:
-                14px;
-
-            margin-bottom:
-                17px;
-
-        }
-
-
-        .experience-description {
-
-            color:
-                var(--muted);
-
-            font-size:
-                14px;
-
-            max-width:
-                650px;
-
-        }
-
-
-        .experience-type {
-
-            color:
-                var(--muted-dark);
-
-            font-size:
-                12px;
-
-            text-align:
-                right;
-
+            font-weight: 700;
         }
 
 
@@ -1056,381 +639,192 @@
            PROJECTS
         ========================================================= */
 
-        .projects {
-
-            display:
-                grid;
+        .projects-grid {
+            display: grid;
 
             grid-template-columns:
-                repeat(2,1fr);
+                repeat(3,1fr);
 
-            gap:
-                20px;
-
+            gap: 20px;
         }
 
+        .project-card {
+            background: var(--card);
 
-        .project {
+            border: 1px solid var(--border);
 
-            position:
-                relative;
+            border-radius: 14px;
 
-            min-height:
-                450px;
+            padding: 25px;
 
-            padding:
-                32px;
+            display: flex;
 
-            border:
-                1px solid var(--border);
+            flex-direction: column;
 
-            border-radius:
-                8px;
-
-            background:
-                #0b0b0b;
-
-            display:
-                flex;
-
-            flex-direction:
-                column;
-
-            overflow:
-                hidden;
-
-            transition:
-                0.4s;
-
+            transition: 0.3s ease;
         }
 
-
-        .project:hover {
-
-            transform:
-                translateY(-6px);
+        .project-card:hover {
+            transform: translateY(-6px);
 
             border-color:
-                #444;
-
+                rgba(79,140,255,0.35);
         }
-
-
-        .project-visual {
-
-            height:
-                190px;
-
-            border:
-                1px solid var(--border);
-
-            background:
-                #080808;
-
-            border-radius:
-                5px;
-
-            margin-bottom:
-                25px;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            position:
-                relative;
-
-            overflow:
-                hidden;
-
-        }
-
-
-        .project-visual::after {
-
-            content:
-                "";
-
-            position:
-                absolute;
-
-            width:
-                180px;
-
-            height:
-                180px;
-
-            border:
-                1px solid #292929;
-
-            border-radius:
-                50%;
-
-        }
-
-
-        .project-icon {
-
-            position:
-                relative;
-
-            z-index:
-                2;
-
-            font-size:
-                40px;
-
-            filter:
-                grayscale(1);
-
-        }
-
 
         .project-number {
+            color: var(--blue);
 
-            color:
-                var(--muted-dark);
+            font-size: 13px;
 
-            font-size:
-                11px;
-
-            letter-spacing:
-                2px;
-
-            margin-bottom:
-                10px;
-
+            margin-bottom: 14px;
         }
 
+        .project-card h3 {
+            font-size: 19px;
 
-        .project h3 {
-
-            font-size:
-                25px;
-
-            margin-bottom:
-                7px;
-
+            margin-bottom: 10px;
         }
 
+        .project-card p {
+            color: var(--text-muted);
 
-        .project-category {
+            font-size: 14px;
 
-            color:
-                #888;
+            line-height: 1.7;
 
-            font-size:
-                12px;
-
-            margin-bottom:
-                17px;
-
+            margin-bottom: 20px;
         }
 
+        .tags {
+            display: flex;
 
-        .project p {
+            flex-wrap: wrap;
 
-            color:
-                var(--muted);
+            gap: 7px;
 
-            font-size:
-                14px;
-
-            margin-bottom:
-                20px;
-
+            margin-bottom: 22px;
         }
 
+        .tag {
+            padding: 5px 9px;
 
-        .project-bottom {
+            border-radius: 5px;
 
-            margin-top:
-                auto;
+            background:
+                rgba(255,255,255,0.05);
 
-            display:
-                flex;
+            color: #b8c1d0;
 
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            gap:
-                15px;
-
+            font-size: 11px;
         }
-
-
-        .project-tech {
-
-            display:
-                flex;
-
-            flex-wrap:
-                wrap;
-
-            gap:
-                6px;
-
-        }
-
-
-        .project-tech span {
-
-            color:
-                #888;
-
-            border:
-                1px solid var(--border);
-
-            padding:
-                5px 8px;
-
-            font-size:
-                10px;
-
-            border-radius:
-                3px;
-
-        }
-
 
         .project-link {
+            margin-top: auto;
 
-            color:
-                white;
+            color: var(--blue);
 
-            font-size:
-                12px;
+            font-size: 13px;
 
-            white-space:
-                nowrap;
-
-        }
-
-
-        .project-link:hover {
-
-            text-decoration:
-                underline;
-
+            font-weight: 600;
         }
 
 
         /* =========================================================
-           EDUCATION
+           EXPERIENCE + EDUCATION
         ========================================================= */
 
-        .education {
-
-            border-top:
-                1px solid var(--border);
-
-        }
-
-
-        .education-item {
-
-            display:
-                grid;
+        .two-column {
+            display: grid;
 
             grid-template-columns:
-                180px
-                1fr
-                150px;
+                1fr 1fr;
 
-            gap:
-                30px;
-
-            padding:
-                35px 0;
-
-            border-bottom:
-                1px solid var(--border);
-
+            gap: 70px;
         }
 
-
-        .education-year {
-
-            color:
-                var(--muted-dark);
-
-            font-size:
-                13px;
-
+        .timeline {
+            position: relative;
         }
 
+        .timeline::before {
+            content: "";
 
-        .education-item h3 {
+            position: absolute;
 
-            font-size:
-                21px;
+            left: 7px;
+            top: 10px;
+            bottom: 10px;
 
-            margin-bottom:
-                7px;
+            width: 1px;
 
+            background:
+                rgba(79,140,255,0.3);
         }
 
+        .timeline-item {
+            position: relative;
 
-        .education-degree {
+            padding-left: 35px;
 
-            color:
-                #aaa;
-
-            font-size:
-                14px;
-
+            margin-bottom: 38px;
         }
 
+        .timeline-dot {
+            position: absolute;
 
-        .education-specialization {
+            left: 0;
+            top: 6px;
 
-            color:
-                var(--muted);
+            width: 15px;
+            height: 15px;
 
-            font-size:
-                13px;
+            border-radius: 50%;
 
-            margin-top:
-                8px;
+            background: var(--purple);
 
+            border: 3px solid var(--bg);
+
+            box-shadow:
+                0 0 0 2px
+                rgba(124,58,237,0.35);
         }
 
+        .timeline-header {
+            display: flex;
 
-        .education-score {
+            justify-content: space-between;
 
-            text-align:
-                right;
+            gap: 15px;
 
+            margin-bottom: 5px;
         }
 
-
-        .education-score strong {
-
-            font-size:
-                28px;
-
-            display:
-                block;
-
+        .timeline-header h3 {
+            font-size: 16px;
         }
 
+        .date {
+            color: var(--text-muted);
 
-        .education-score span {
+            font-size: 12px;
 
-            color:
-                var(--muted-dark);
+            white-space: nowrap;
+        }
 
-            font-size:
-                11px;
+        .company {
+            color: var(--blue);
 
+            font-size: 13px;
+
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: var(--text-muted);
+
+            font-size: 13px;
+
+            line-height: 1.7;
         }
 
 
@@ -1438,84 +832,35 @@
            CERTIFICATIONS
         ========================================================= */
 
-        .certifications {
-
-            display:
-                grid;
+        .cert-grid {
+            display: grid;
 
             grid-template-columns:
                 repeat(3,1fr);
 
-            gap:
-                15px;
-
+            gap: 18px;
         }
 
+        .cert-card {
+            padding: 22px;
 
-        .certification {
+            background: var(--card);
 
-            padding:
-                30px;
+            border: 1px solid var(--border);
 
-            border:
-                1px solid var(--border);
-
-            background:
-                var(--surface);
-
-            min-height:
-                200px;
-
-            transition:
-                0.3s;
-
+            border-radius: 10px;
         }
 
+        .cert-card h3 {
+            font-size: 15px;
 
-        .certification:hover {
-
-            transform:
-                translateY(-5px);
-
-            border-color:
-                #444;
-
+            margin-bottom: 8px;
         }
 
+        .cert-card p {
+            color: var(--text-muted);
 
-        .cert-number {
-
-            color:
-                var(--muted-dark);
-
-            font-size:
-                11px;
-
-            margin-bottom:
-                40px;
-
-        }
-
-
-        .certification h3 {
-
-            font-size:
-                17px;
-
-            margin-bottom:
-                10px;
-
-        }
-
-
-        .certification p {
-
-            color:
-                var(--muted);
-
-            font-size:
-                12px;
-
+            font-size: 12px;
         }
 
 
@@ -1523,68 +868,50 @@
            LEADERSHIP
         ========================================================= */
 
-        .leadership {
+        .leadership-card {
+            padding: 30px;
 
-            display:
-                grid;
+            border: 1px solid var(--border);
 
-            grid-template-columns:
-                1fr
-                1fr;
+            background: var(--card);
 
-            gap:
-                20px;
+            border-radius: 14px;
 
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
         }
 
+        .leadership-icon {
+            min-width: 65px;
+            height: 65px;
 
-        .leadership-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            padding:
-                35px;
-
-            border:
-                1px solid var(--border);
+            border-radius: 14px;
 
             background:
-                var(--surface);
+                linear-gradient(
+                    135deg,
+                    rgba(59,130,246,0.18),
+                    rgba(124,58,237,0.18)
+                );
 
+            font-size: 27px;
         }
-
 
         .leadership-card h3 {
-
-            font-size:
-                22px;
-
-            margin-bottom:
-                8px;
-
+            margin-bottom: 5px;
         }
-
-
-        .leadership-role {
-
-            color:
-                #aaa;
-
-            font-size:
-                14px;
-
-            margin-bottom:
-                20px;
-
-        }
-
 
         .leadership-card p {
+            color: var(--text-muted);
 
-            color:
-                var(--muted);
-
-            font-size:
-                14px;
-
+            font-size: 14px;
         }
 
 
@@ -1592,138 +919,46 @@
            CONTACT
         ========================================================= */
 
-        #contact {
-
-            padding-bottom:
-                100px;
-
+        .contact {
+            text-align: center;
         }
 
-
-        .contact-box {
-
-            border-top:
-                1px solid var(--border);
-
-            border-bottom:
-                1px solid var(--border);
-
-            padding:
-                80px 0;
-
-            text-align:
-                center;
-
+        .contact .section-title {
+            margin-bottom: 15px;
         }
 
+        .contact-description {
+            color: var(--text-muted);
 
-        .contact-box h2 {
-
-            font-size:
-                clamp(45px, 8vw, 90px);
-
-            letter-spacing:
-                -5px;
-
-            line-height:
-                0.95;
-
-            margin-bottom:
-                25px;
-
+            margin-bottom: 35px;
         }
 
+        .contact-items {
+            display: flex;
 
-        .contact-box p {
+            justify-content: center;
 
-            color:
-                var(--muted);
+            flex-wrap: wrap;
 
-            max-width:
-                500px;
-
-            margin:
-                0 auto 30px;
-
+            gap: 20px;
         }
 
+        .contact-item {
+            padding: 15px 22px;
 
-        .contact-email {
+            background: var(--card);
 
-            font-size:
-                18px;
+            border: 1px solid var(--border);
 
-            margin-bottom:
-                30px;
+            border-radius: 10px;
 
-            display:
-                inline-block;
+            color: var(--text-light);
 
-            border-bottom:
-                1px solid #555;
-
-            padding-bottom:
-                5px;
-
+            font-size: 14px;
         }
 
-
-        .contact-email:hover {
-
-            border-color:
-                white;
-
-        }
-
-
-        .social-links {
-
-            display:
-                flex;
-
-            justify-content:
-                center;
-
-            flex-wrap:
-                wrap;
-
-            gap:
-                10px;
-
-        }
-
-
-        .social {
-
-            border:
-                1px solid var(--border-light);
-
-            padding:
-                10px 18px;
-
-            border-radius:
-                4px;
-
-            color:
-                #aaa;
-
-            font-size:
-                12px;
-
-            transition:
-                0.3s;
-
-        }
-
-
-        .social:hover {
-
-            color:
-                white;
-
-            border-color:
-                #777;
-
+        .contact-item:hover {
+            border-color: var(--blue);
         }
 
 
@@ -1732,33 +967,15 @@
         ========================================================= */
 
         footer {
+            border-top: 1px solid var(--border);
 
-            border-top:
-                1px solid var(--border);
+            padding: 25px 0;
 
-            padding:
-                30px 0;
+            text-align: center;
 
-        }
+            color: var(--text-muted);
 
-
-        .footer-content {
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            color:
-                var(--muted-dark);
-
-            font-size:
-                12px;
-
+            font-size: 12px;
         }
 
 
@@ -1767,28 +984,19 @@
         ========================================================= */
 
         .reveal {
+            opacity: 0;
 
-            opacity:
-                0;
-
-            transform:
-                translateY(25px);
+            transform: translateY(30px);
 
             transition:
                 opacity 0.7s ease,
                 transform 0.7s ease;
-
         }
 
+        .reveal.show {
+            opacity: 1;
 
-        .reveal.visible {
-
-            opacity:
-                1;
-
-            transform:
-                translateY(0);
-
+            transform: translateY(0);
         }
 
 
@@ -1796,1456 +1004,888 @@
            RESPONSIVE
         ========================================================= */
 
-        @media (max-width: 950px) {
-
-            .hero {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-
-            .hero-card {
-
-                max-width:
-                    600px;
-
-            }
-
-
-            .services {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-
-            .skills-layout {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    40px;
-
-            }
-
-
-            .certifications {
-
-                grid-template-columns:
-                    1fr 1fr;
-
-            }
-
-
-            .leadership {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-        }
-
-
-        @media (max-width: 750px) {
+        @media(max-width: 900px) {
 
             .nav-links {
+                position: absolute;
 
-                position:
-                    absolute;
+                top: 70px;
+                left: 0;
 
-                top:
-                    78px;
-
-                left:
-                    0;
-
-                right:
-                    0;
+                width: 100%;
 
                 background:
-                    rgba(7,7,7,0.98);
+                    rgba(5,9,18,0.98);
+
+                flex-direction: column;
+
+                padding: 25px;
+
+                gap: 22px;
+
+                display: none;
 
                 border-bottom:
                     1px solid var(--border);
-
-                display:
-                    none;
-
-                flex-direction:
-                    column;
-
-                align-items:
-                    flex-start;
-
-                padding:
-                    25px;
-
-                gap:
-                    20px;
-
             }
-
 
             .nav-links.active {
-
-                display:
-                    flex;
-
+                display: flex;
             }
 
-
-            .menu-button {
-
-                display:
-                    block;
-
+            .menu-btn {
+                display: block;
             }
 
+            .nav-buttons {
+                display: none;
+            }
 
-            .about-grid {
+            .hero-container {
+                grid-template-columns: 1fr;
 
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-top: 50px;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons,
+            .social-links {
+                justify-content: center;
+            }
+
+            .hero-image {
+                height: 470px;
+            }
+
+            .profile-photo {
+                height: 470px;
+
+                width: 370px;
+            }
+
+            .about-grid,
+            .two-column {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .services-grid,
+            .projects-grid {
                 grid-template-columns:
-                    1fr;
-
-                gap:
-                    40px;
-
+                    repeat(2,1fr);
             }
 
-
-            .projects {
-
+            .skills-grid {
                 grid-template-columns:
-                    1fr;
-
+                    repeat(3,1fr);
             }
 
-
-            .experience-item {
-
+            .cert-grid {
                 grid-template-columns:
-                    1fr;
-
-                gap:
-                    8px;
-
+                    repeat(2,1fr);
             }
-
-
-            .experience-type {
-
-                text-align:
-                    left;
-
-            }
-
-
-            .education-item {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    10px;
-
-            }
-
-
-            .education-score {
-
-                text-align:
-                    left;
-
-            }
-
-
-            .certifications {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-
-            .hero h1 {
-
-                letter-spacing:
-                    -4px;
-
-            }
-
-
-            .hero-card {
-
-                min-height:
-                    320px;
-
-            }
-
         }
 
 
-        @media (max-width: 500px) {
+        @media(max-width: 600px) {
 
-            .about-info {
+            .brand-name {
+                font-size: 15px;
+            }
 
+            .brand-photo {
+                width: 36px;
+                height: 36px;
+            }
+
+            .hero {
+                padding-top: 90px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+
+                letter-spacing: -2px;
+            }
+
+            .hero-small {
+                font-size: 20px;
+            }
+
+            .hero-role {
+                font-size: 16px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+
+            .profile-photo {
+                height: 400px;
+
+                width: 310px;
+            }
+
+            .services-grid,
+            .projects-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
                 grid-template-columns:
-                    1fr;
-
+                    repeat(2,1fr);
             }
 
-
-            .contact-box h2 {
-
-                letter-spacing:
-                    -3px;
-
+            .info-grid {
+                grid-template-columns: 1fr;
             }
 
+            .timeline-header {
+                flex-direction: column;
 
-            .footer-content {
-
-                flex-direction:
-                    column;
-
-                align-items:
-                    flex-start;
-
-                gap:
-                    8px;
-
+                gap: 2px;
             }
 
+            .leadership-card {
+                align-items: flex-start;
+            }
+
+            .contact-items {
+                flex-direction: column;
+            }
+
+            .contact-item {
+                width: 100%;
+            }
         }
 
     </style>
-
 </head>
 
 
 <body>
 
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================== -->
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
-    <header id="header">
+<nav>
 
-        <div class="container">
+    <div class="container nav-container">
 
-            <nav>
+        <a href="#home" class="brand">
 
-               
+            <!-- YOUR PROFILE IMAGE -->
+            <img
+                src="profile.jpg"
+                alt="AxgaNanthen Sai"
+                class="brand-photo"
+            >
+
+            <div class="brand-name">
+                AxgaNanthen <span>Sai</span>
+            </div>
+
+        </a>
 
 
-                <button
-                    class="menu-button"
-                    id="menuButton"
-                    aria-label="Open navigation">
+        <ul class="nav-links" id="navLinks">
 
-                    ☰
+            <li>
+                <a href="#home" class="active">Home</a>
+            </li>
 
-                </button>
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
 
 
-                <ul class="nav-links" id="navLinks">
+        <div class="nav-buttons">
 
-                    <li>
-                        <a href="#about">
-                            About
-                        </a>
-                    </li>
+            <button
+                class="theme-btn"
+                id="themeBtn"
+                title="Toggle theme">
+                ☾
+            </button>
 
-                    <li>
-                        <a href="#services">
-                            What I Do
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#skills">
-                            Skills
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#experience">
-                            Experience
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#projects">
-                            Projects
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#contact"
-                           class="nav-contact">
-                            Let's Talk
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
+            <a
+                href="#contact"
+                class="cv-btn">
+                Contact Me
+            </a>
 
         </div>
 
-    </header>
+
+        <button
+            class="menu-btn"
+            id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</nav>
 
 
-    <!-- =========================================================
-         HERO
-    ========================================================== -->
 
-    <main>
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-        <section id="home">
+<section class="hero" id="home">
 
-            <div class="container">
-
-                <div class="hero">
+    <div class="container hero-container">
 
 
-                    <div class="reveal">
+        <div class="hero-content reveal">
 
-                        <div class="hero-small">
-                            Computer Science • Cybersecurity • Development
-                        </div>
-
-
-                        <h1>
-
-                            Aegananthen Sai BS
-
-                            
-
-                        </h1>
+            <div class="hero-small">
+                Hi, I'm
+            </div>
 
 
-                        <p class="hero-description">
-
-                            I build software, explore cybersecurity,
-                            and solve real-world problems through
-                            technology.
-
-                            I'm a Computer Science student specializing
-                            in Cyber Security and Digital Forensics,
-                            passionate about creating useful and secure
-                            digital experiences.
-
-                        </p>
+            <h1>
+                AxgaNanthen
+                <span>Sai.</span>
+            </h1>
 
 
-                        <div class="hero-buttons">
-
-                            <a
-                                href="#projects"
-                                class="button button-primary">
-
-                                Explore My Work
-                                ↓
-
-                            </a>
+            <div class="hero-role">
+                Computer Science Engineer | Cybersecurity Enthusiast
+            </div>
 
 
-                            <a
-                                href="https://github.com/AEGANANTHEN"
-                                target="_blank"
-                                class="button button-secondary">
-
-                                GitHub ↗
-
-                            </a>
+            <p class="hero-description">
+                Final-year Computer Science Engineering student specializing
+                in Cybersecurity and Digital Forensics. I enjoy building
+                secure, scalable and impactful software solutions while
+                continuously exploring new technologies.
+            </p>
 
 
-                            <a
-                                href="https://www.linkedin.com/in/aegananthen-sai-735301329/"
-                                target="_blank"
-                                class="button button-secondary">
+            <div class="hero-buttons">
 
-                                LinkedIn ↗
+                <a
+                    href="#projects"
+                    class="primary-btn">
+                    View My Work →
+                </a>
 
-                            </a>
+                <a
+                    href="#contact"
+                    class="secondary-btn">
+                    Contact Me
+                </a>
 
-                        </div>
-
-                    </div>
-
-
-                    <div class="hero-card reveal">
-
-
-                        <div class="profile-symbol">
-
-                            <span>
-                                AS
-                            </span>
-
-                        </div>
+            </div>
 
 
-                        <div class="hero-card-label">
+            <div class="social-links">
 
-                            <div class="availability">
+                <a
+                    href="https://github.com/AEGANANTHEN"
+                    target="_blank"
+                    title="GitHub">
+                    GH
+                </a>
 
-                                <span class="availability-dot"></span>
+                <a
+                    href="https://www.linkedin.com/in/aegananthen-sai-735301329/"
+                    target="_blank"
+                    title="LinkedIn">
+                    in
+                </a>
 
-                                Open to opportunities
+                <a
+                    href="mailto:bsaegananthensai@gmail.com"
+                    title="Email">
+                    @
+                </a>
 
-                            </div>
+                <a
+                    href="#projects"
+                    title="Projects">
+                    &lt;/&gt;
+                </a>
+
+            </div>
+
+        </div>
 
 
-                            <div>
-                                VIT Bhopal
-                            </div>
 
-                        </div>
+        <!-- HERO PROFILE PHOTO -->
 
-                    </div>
+        <div class="hero-image reveal">
 
+            <img
+                src="profile.jpg"
+                alt="Professional portrait of AxgaNanthen Sai"
+                class="profile-photo"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="container reveal">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text">
+
+                <p>
+                    I am a final-year Computer Science Engineering student
+                    specializing in Cybersecurity and Digital Forensics.
+                    I enjoy building web applications, solving programming
+                    problems and exploring cybersecurity.
+                </p>
+
+                <p>
+                    My interests include software development, backend
+                    engineering, cybersecurity, digital forensics and
+                    creating practical solutions to real-world problems.
+                </p>
+
+                <p>
+                    I am continuously learning and working on projects that
+                    challenge me to improve my technical and problem-solving
+                    abilities.
+                </p>
+
+            </div>
+
+
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <small>Location</small>
+
+                    <strong>India</strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <small>Education</small>
+
+                    <strong>B.Tech CSE</strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <small>Specialization</small>
+
+                    <strong>Cybersecurity</strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <small>CGPA</small>
+
+                    <strong>8.86</strong>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
 
 
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
 
-        <section id="about">
+<!-- =========================================================
+     WHAT I DO
+========================================================= -->
 
-            <div class="container">
+<section>
+
+    <div class="container reveal">
+
+        <h2 class="section-title">
+            What I <span>Do</span>
+        </h2>
 
 
-                <div class="section-header reveal">
+        <div class="services-grid">
 
-                    <div class="section-number">
-                        01 / ABOUT
-                    </div>
 
-                    <h2>
-                        A little about me.
-                    </h2>
+            <div class="service-card">
 
-                    <p>
-                        The person behind the code.
-                    </p>
-
+                <div class="service-icon">
+                    &lt;/&gt;
                 </div>
 
+                <h3>
+                    Software Development
+                </h3>
 
-                <div class="about-grid">
-
-
-                    <div class="about-large reveal">
-
-                        I'm a Computer Science student who
-                        enjoys building things and understanding
-                        how technology works.
-
-                        <span>
-                            My focus lies between software
-                            development, cybersecurity and
-                            digital forensics.
-                        </span>
-
-                    </div>
-
-
-                    <div class="about-text reveal">
-
-                        <p>
-
-                            I'm currently pursuing a B.Tech in
-                            Computer Science and Engineering at
-                            VIT Bhopal, specializing in Cyber Security
-                            and Digital Forensics.
-
-                        </p>
-
-
-                        <p>
-
-                            I've gained practical experience through
-                            software engineering and cybersecurity
-                            internships, while working on projects
-                            involving AI, full-stack development,
-                            URL security analysis and digital
-                            forensics.
-
-                        </p>
-
-
-                        <p>
-
-                            I enjoy learning new technologies,
-                            solving technical problems and turning
-                            ideas into working applications.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-                <br><br><br>
-
-
-                <div class="about-info reveal">
-
-
-                    <div class="info-item">
-
-                        <div class="info-label">
-                            Education
-                        </div>
-
-                        <div class="info-value">
-                            VIT Bhopal University
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-item">
-
-                        <div class="info-label">
-                            Degree
-                        </div>
-
-                        <div class="info-value">
-                            B.Tech CSE
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-item">
-
-                        <div class="info-label">
-                            Specialization
-                        </div>
-
-                        <div class="info-value">
-                            Cyber Security & Digital Forensics
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-item">
-
-                        <div class="info-label">
-                            CGPA
-                        </div>
-
-                        <div class="info-value">
-                            8.86 / 10
-                        </div>
-
-                    </div>
-
-
-                </div>
+                <p>
+                    Building responsive applications, backend services,
+                    REST APIs and practical software solutions using
+                    modern development technologies.
+                </p>
 
             </div>
 
-        </section>
 
+            <div class="service-card">
 
-        <!-- =====================================================
-             WHAT I DO
-        ====================================================== -->
-
-        <section id="services">
-
-            <div class="container">
-
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        02 / WHAT I DO
-                    </div>
-
-                    <h2>
-                        Areas I work in.
-                    </h2>
-
+                <div class="service-icon">
+                    🔐
                 </div>
 
+                <h3>
+                    Cybersecurity
+                </h3>
 
-                <div class="services">
-
-
-                    <div class="service reveal">
-
-                        <div class="service-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Software Development
-                        </h3>
-
-                        <p>
-
-                            Building practical applications
-                            using programming fundamentals,
-                            backend development, APIs,
-                            databases and software engineering
-                            practices.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="service reveal">
-
-                        <div class="service-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Cybersecurity
-                        </h3>
-
-                        <p>
-
-                            Exploring application security,
-                            penetration testing, network analysis,
-                            phishing detection and security
-                            concepts.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="service reveal">
-
-                        <div class="service-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Digital Forensics
-                        </h3>
-
-                        <p>
-
-                            Working with concepts around forensic
-                            investigations, evidence management,
-                            authentication and secure workflows.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
+                <p>
+                    Exploring network security, penetration testing,
+                    vulnerability analysis and security-focused
+                    development.
+                </p>
 
             </div>
 
-        </section>
 
+            <div class="service-card">
 
-        <!-- =====================================================
-             SKILLS
-        ====================================================== -->
-
-        <section id="skills">
-
-            <div class="container">
-
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        03 / SKILLS
-                    </div>
-
-                    <h2>
-                        My toolkit.
-                    </h2>
-
+                <div class="service-icon">
+                    🛡️
                 </div>
 
+                <h3>
+                    Digital Forensics
+                </h3>
 
-                <div class="skills-layout">
-
-
-                    <div class="skills-intro reveal">
-
-                        <p>
-
-                            Technologies and concepts I've
-                            worked with throughout my academic,
-                            internship and project experience.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="skills-list reveal">
-
-
-                        <span class="skill">
-                            Java
-                        </span>
-
-                        <span class="skill">
-                            Python
-                        </span>
-
-                        <span class="skill">
-                            Node.js
-                        </span>
-
-                        <span class="skill">
-                            HTML
-                        </span>
-
-                        <span class="skill">
-                            CSS
-                        </span>
-
-                        <span class="skill">
-                            FastAPI
-                        </span>
-
-                        <span class="skill">
-                            REST APIs
-                        </span>
-
-                        <span class="skill">
-                            MySQL
-                        </span>
-
-                        <span class="skill">
-                            SQL
-                        </span>
-
-                        <span class="skill">
-                            DBMS
-                        </span>
-
-                        <span class="skill">
-                            Data Structures
-                        </span>
-
-                        <span class="skill">
-                            OOP
-                        </span>
-
-                        <span class="skill">
-                            SDLC
-                        </span>
-
-                        <span class="skill">
-                            Git
-                        </span>
-
-                        <span class="skill">
-                            GitHub
-                        </span>
-
-                        <span class="skill">
-                            AWS EC2
-                        </span>
-
-                        <span class="skill">
-                            AWS S3
-                        </span>
-
-                        <span class="skill">
-                            AWS Lambda
-                        </span>
-
-                        <span class="skill">
-                            AWS IAM
-                        </span>
-
-                        <span class="skill">
-                            Penetration Testing
-                        </span>
-
-                        <span class="skill">
-                            Network Analysis
-                        </span>
-
-                        <span class="skill">
-                            Wireshark
-                        </span>
-
-                        <span class="skill">
-                            Nmap
-                        </span>
-
-                        <span class="skill">
-                            CTF
-                        </span>
-
-
-                    </div>
-
-                </div>
+                <p>
+                    Interested in digital evidence management,
+                    investigation workflows and forensic security
+                    practices.
+                </p>
 
             </div>
 
-        </section>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-        <!-- =====================================================
-             EXPERIENCE
-        ====================================================== -->
 
-        <section id="experience">
+<!-- =========================================================
+     SKILLS
+========================================================= -->
 
-            <div class="container">
+<section id="skills">
+
+    <div class="container reveal">
+
+        <h2 class="section-title">
+            Technical <span>Skills</span>
+        </h2>
 
 
-                <div class="section-header reveal">
+        <div class="skills-grid">
 
-                    <div class="section-number">
-                        04 / EXPERIENCE
-                    </div>
 
-                    <h2>
-                        Where I've worked.
-                    </h2>
+            <div class="skill">
+                <span class="skill-icon">PY</span>
+                Python
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">JV</span>
+                Java
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">JS</span>
+                JavaScript
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">ND</span>
+                Node.js
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">HT</span>
+                HTML
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">CS</span>
+                CSS
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">SQL</span>
+                SQL
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">DB</span>
+                DBMS
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">API</span>
+                REST APIs
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">AWS</span>
+                AWS
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">GIT</span>
+                Git & GitHub
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">CTF</span>
+                CTF
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">NET</span>
+                Network Analysis
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">WF</span>
+                Wireshark
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">NM</span>
+                Nmap
+            </div>
+
+
+            <div class="skill">
+                <span class="skill-icon">SEC</span>
+                Penetration Testing
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+    <div class="container reveal">
+
+        <h2 class="section-title">
+            Selected <span>Projects</span>
+        </h2>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01 / PROJECT
+                </div>
+
+                <h3>
+                    EduSahayak
+                </h3>
+
+                <p>
+                    AI-powered teaching assistant designed to support
+                    rural and multi-grade classrooms with multilingual
+                    educational content generation.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">AI</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Supabase</span>
+                    <span class="tag">Multilingual</span>
 
                 </div>
 
+                <a
+                    href="https://github.com/AEGANANTHEN/EduSahayak-main-final-"
+                    target="_blank"
+                    class="project-link">
 
-                <div class="experience">
+                    View Project →
 
-
-                    <div class="experience-item reveal">
-
-
-                        <div class="experience-date">
-                            May 2026 — Jul 2026
-                        </div>
-
-
-                        <div>
-
-                            <div class="experience-role">
-                                Advanced Software Engineering
-                                & Development Intern
-                            </div>
-
-                            <div class="experience-company">
-                                MPOnline
-                            </div>
-
-
-                            <div class="experience-description">
-
-                                Applied Java and Python with
-                                object-oriented programming,
-                                data structures, exception handling
-                                and programming fundamentals through
-                                hands-on software engineering tasks.
-
-                                <br><br>
-
-                                Worked with SQL, database operations,
-                                backend development, HTML/CSS and SDLC
-                                practices while applying Git/GitHub,
-                                debugging and exception handling.
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="experience-type">
-                            Internship
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="experience-item reveal">
-
-
-                        <div class="experience-date">
-                            May 2026 — Jun 2026
-                        </div>
-
-
-                        <div>
-
-                            <div class="experience-role">
-                                Cyber Security Intern
-                            </div>
-
-                            <div class="experience-company">
-                                NextSkill Technologies Pvt. Ltd.
-                            </div>
-
-
-                            <div class="experience-description">
-
-                                Gained practical industry exposure
-                                to cybersecurity processes, assigned
-                                technical tasks and security-oriented
-                                practices.
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="experience-type">
-                            Internship
-                        </div>
-
-
-                    </div>
-
-
-                </div>
+                </a>
 
             </div>
 
-        </section>
 
 
-        <!-- =====================================================
-             PROJECTS
-        ====================================================== -->
+            <!-- PROJECT 2 -->
 
-        <section id="projects">
+            <div class="project-card">
 
-            <div class="container">
+                <div class="project-number">
+                    02 / PROJECT
+                </div>
 
+                <h3>
+                    URL Safety Checker
+                </h3>
 
-                <div class="section-header reveal">
+                <p>
+                    Full-stack web application that analyzes URLs using
+                    rule-based phishing indicators and classifies them
+                    as Safe, Suspicious or Dangerous.
+                </p>
 
-                    <div class="section-number">
-                        05 / PROJECTS
-                    </div>
+                <div class="tags">
 
-                    <h2>
-                        Selected work.
-                    </h2>
-
-                    <p>
-                        Projects that represent what I like
-                        building and learning.
-                    </p>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Cybersecurity</span>
 
                 </div>
 
+                <a
+                    href="https://github.com/AEGANANTHEN/URL-safety-checker"
+                    target="_blank"
+                    class="project-link">
 
-                <div class="projects">
+                    View Project →
 
-
-                    <!-- =================================================
-                         EDUSAHAYAK
-                    ================================================== -->
-
-                    <article class="project reveal">
-
-
-                        <div class="project-visual">
-
-                            <div class="project-icon">
-                                📚
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-number">
-                            PROJECT / 01
-                        </div>
-
-
-                        <h3>
-                            EduSahayak
-                        </h3>
-
-
-                        <div class="project-category">
-                            AI-Powered Teaching Assistant
-                        </div>
-
-
-                        <p>
-
-                            Developed an AI-powered teaching
-                            assistant for rural and multi-grade
-                            classrooms with multilingual content
-                            generation.
-
-                            Built workflows for lesson plans,
-                            worksheets, stories, activities and
-                            concept explanations while supporting
-                            text, voice, image and document inputs.
-
-                        </p>
-
-
-                        <div class="project-bottom">
-
-
-                            <div class="project-tech">
-
-                                <span>
-                                    AI
-                                </span>
-
-                                <span>
-                                    Supabase
-                                </span>
-
-                                <span>
-                                    Multilingual
-                                </span>
-
-                            </div>
-
-
-                            <a
-                                href="https://github.com/AEGANANTHEN/EduSahayak-main-final-"
-                                target="_blank"
-                                class="project-link">
-
-                                GitHub ↗
-
-                            </a>
-
-
-                        </div>
-
-
-                    </article>
-
-
-                    <!-- =================================================
-                         URL SAFETY CHECKER
-                    ================================================== -->
-
-                    <article class="project reveal">
-
-
-                        <div class="project-visual">
-
-                            <div class="project-icon">
-                                🔗
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-number">
-                            PROJECT / 02
-                        </div>
-
-
-                        <h3>
-                            URL Safety Checker
-                        </h3>
-
-
-                        <div class="project-category">
-                            Full-Stack Web Application
-                        </div>
-
-
-                        <p>
-
-                            Developed a full-stack application
-                            for analyzing URLs and identifying
-                            potential phishing indicators through
-                            rule-based analysis.
-
-                            The application analyzes HTTPS,
-                            IP addresses, keywords, URL structure,
-                            subdomains, hyphens, @ symbols and
-                            suspicious TLDs.
-
-                        </p>
-
-
-                        <div class="project-bottom">
-
-
-                            <div class="project-tech">
-
-                                <span>
-                                    Full Stack
-                                </span>
-
-                                <span>
-                                    Security
-                                </span>
-
-                                <span>
-                                    Phishing
-                                </span>
-
-                            </div>
-
-
-                            <a
-                                href="https://github.com/AEGANANTHEN/URL-safety-checker"
-                                target="_blank"
-                                class="project-link">
-
-                                GitHub ↗
-
-                            </a>
-
-
-                        </div>
-
-
-                    </article>
-
-
-                    <!-- =================================================
-                         DIGIFORENSICS
-                    ================================================== -->
-
-                    <article class="project reveal">
-
-
-                        <div class="project-visual">
-
-                            <div class="project-icon">
-                                🛡️
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-number">
-                            PROJECT / 03
-                        </div>
-
-
-                        <h3>
-                            DigiForensics
-                        </h3>
-
-
-                        <div class="project-category">
-                            Digital Forensics Evidence Management
-                        </div>
-
-
-                        <p>
-
-                            Developed a centralized application
-                            for managing forensic cases, investigators,
-                            evidence and workflow data.
-
-                            Implemented role-based access,
-                            authentication, case management,
-                            evidence upload and secure storage
-                            through Administrator and Investigator
-                            workflows.
-
-                        </p>
-
-
-                        <div class="project-bottom">
-
-
-                            <div class="project-tech">
-
-                                <span>
-                                    Forensics
-                                </span>
-
-                                <span>
-                                    RBAC
-                                </span>
-
-                                <span>
-                                    Security
-                                </span>
-
-                            </div>
-
-
-                            <a
-                                href="https://github.com/AEGANANTHEN/DigiForensics"
-                                target="_blank"
-                                class="project-link">
-
-                                GitHub ↗
-
-                            </a>
-
-
-                        </div>
-
-
-                    </article>
-
-
-                    <!-- =================================================
-                         MORE PROJECT PLACEHOLDER
-                    ================================================== -->
-
-                    <article class="project reveal">
-
-
-                        <div class="project-visual">
-
-                            <div class="project-icon">
-                                +
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-number">
-                            PROJECT / 04
-                        </div>
-
-
-                        <h3>
-                            More Coming Soon
-                        </h3>
-
-
-                        <div class="project-category">
-                            Currently Building
-                        </div>
-
-
-                        <p>
-
-                            I'm continuously learning and building
-                            new projects across software development,
-                            cybersecurity and digital forensics.
-
-                        </p>
-
-
-                        <div class="project-bottom">
-
-
-                            <div class="project-tech">
-
-                                <span>
-                                    Learning
-                                </span>
-
-                                <span>
-                                    Building
-                                </span>
-
-                            </div>
-
-
-                            <a
-                                href="https://github.com/AEGANANTHEN"
-                                target="_blank"
-                                class="project-link">
-
-                                GitHub ↗
-
-                            </a>
-
-
-                        </div>
-
-
-                    </article>
-
-
-                </div>
+                </a>
 
             </div>
 
-        </section>
 
 
-        <!-- =====================================================
-             EDUCATION
-        ====================================================== -->
+            <!-- PROJECT 3 -->
 
-        <section id="education">
+            <div class="project-card">
 
-            <div class="container">
+                <div class="project-number">
+                    03 / PROJECT
+                </div>
 
+                <h3>
+                    DigiForensics
+                </h3>
 
-                <div class="section-header reveal">
+                <p>
+                    Digital forensics evidence management system for
+                    centralized case management, investigators,
+                    evidence uploads and secure storage.
+                </p>
 
-                    <div class="section-number">
-                        06 / EDUCATION
-                    </div>
+                <div class="tags">
 
-                    <h2>
-                        Academic journey.
-                    </h2>
+                    <span class="tag">Security</span>
+                    <span class="tag">Digital Forensics</span>
+                    <span class="tag">Database</span>
+                    <span class="tag">Authentication</span>
 
                 </div>
 
+                <a
+                    href="https://github.com/AEGANANTHEN/DigiForensics"
+                    target="_blank"
+                    class="project-link">
 
-                <div class="education">
+                    View Project →
+
+                </a>
+
+            </div>
 
 
-                    <div class="education-item reveal">
+        </div>
+
+    </div>
+
+</section>
 
 
-                        <div class="education-year">
-                            2023 — 2027
-                        </div>
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section id="experience">
+
+    <div class="container reveal">
+
+        <h2 class="section-title">
+            Experience & <span>Education</span>
+        </h2>
 
 
-                        <div>
+        <div class="two-column">
+
+
+            <!-- EXPERIENCE -->
+
+            <div>
+
+                <h3 style="margin-bottom:30px;">
+                    Experience
+                </h3>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-header">
 
                             <h3>
-                                Vellore Institute of Technology,
-                                Bhopal
+                                Advanced Software Engineering
+                                & Development Intern
                             </h3>
 
-
-                            <div class="education-degree">
-
-                                B.Tech in Computer Science
-                                and Engineering
-
-                            </div>
-
-
-                            <div class="education-specialization">
-
-                                Specialization:
-                                Cyber Security and Digital Forensics
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="education-score">
-
-                            <strong>
-                                8.86
-                            </strong>
-
-                            <span>
-                                CGPA
+                            <span class="date">
+                                May 2026 – Jul 2026
                             </span>
 
                         </div>
 
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CERTIFICATIONS
-        ====================================================== -->
-
-        <section id="certifications">
-
-            <div class="container">
-
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        07 / CERTIFICATIONS
-                    </div>
-
-                    <h2>
-                        Always learning.
-                    </h2>
-
-                </div>
-
-
-                <div class="certifications">
-
-
-                    <div class="certification reveal">
-
-                        <div class="cert-number">
-                            CERT / 01
+                        <div class="company">
+                            MPOnline
                         </div>
 
-                        <h3>
-                            The Bits and Bytes of
-                            Computer Networking
-                        </h3>
-
                         <p>
-                            Google / Coursera
-                            <br>
-                            January 2026
+                            Worked with Java, Python, OOP, data structures,
+                            exception handling, SQL, database concepts,
+                            backend development, HTML/CSS, Git/GitHub,
+                            debugging and software development practices.
                         </p>
 
                     </div>
 
 
-                    <div class="certification reveal">
 
-                        <div class="cert-number">
-                            CERT / 02
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-header">
+
+                            <h3>
+                                Cyber Security Intern
+                            </h3>
+
+                            <span class="date">
+                                May 2026 – Jun 2026
+                            </span>
+
                         </div>
 
-                        <h3>
-                            World Wide CTF 2025
-                        </h3>
-
-                        <p>
-                            World Wide Flags
-                            <br>
-                            July 2025
-                        </p>
-
-                    </div>
-
-
-                    <div class="certification reveal">
-
-                        <div class="cert-number">
-                            CERT / 03
+                        <div class="company">
+                            NextSkill Technologies Pvt. Ltd.
                         </div>
 
-                        <h3>
-                            Red Team Essentials
-                        </h3>
-
                         <p>
-                            MITRE ATT&CK Framework
-                            <br>
-                            September 2024
+                            Worked with cybersecurity processes, security
+                            practices and practical cybersecurity tasks.
                         </p>
 
                     </div>
@@ -3255,369 +1895,441 @@
 
             </div>
 
-        </section>
 
 
-        <!-- =====================================================
-             LEADERSHIP
-        ====================================================== -->
+            <!-- EDUCATION -->
 
-        <section id="leadership">
+            <div id="education">
 
-            <div class="container">
-
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        08 / LEADERSHIP
-                    </div>
-
-                    <h2>
-                        Beyond academics.
-                    </h2>
-
-                </div>
+                <h3 style="margin-bottom:30px;">
+                    Education
+                </h3>
 
 
-                <div class="leadership">
+                <div class="timeline">
 
 
-                    <div class="leadership-card reveal">
+                    <div class="timeline-item">
 
-                        <h3>
-                            VITKULT
-                        </h3>
+                        <div class="timeline-dot"></div>
 
-                        <div class="leadership-role">
+                        <div class="timeline-header">
 
+                            <h3>
+                                B.Tech Computer Science
+                                & Engineering
+                            </h3>
+
+                            <span class="date">
+                                2023 – 2027
+                            </span>
+
+                        </div>
+
+                        <div class="company">
                             VIT Bhopal University
-                            <br>
-                            Discipline & Volunteer Lead
-                            <br>
-                            2026 — Present
-
                         </div>
 
-
                         <p>
-
-                            Lead volunteer management,
-                            responsibility allocation,
-                            crowd management and security
-                            coordination under the Event
-                            Management domain.
-
+                            Specialization:
+                            Cyber Security and Digital Forensics
+                            <br><br>
+                            CGPA: 8.86
                         </p>
 
                     </div>
 
 
-                    <div class="leadership-card reveal">
-
-                        <h3>
-                            What I Bring
-                        </h3>
-
-                        <div class="leadership-role">
-
-                            Technical + Teamwork
-
-                        </div>
-
-
-                        <p>
-
-                            Alongside technical development,
-                            I enjoy taking responsibility,
-                            coordinating with people and
-                            contributing to team-driven
-                            environments.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
-
-        <section id="contact">
-
-            <div class="container">
-
-
-                <div class="contact-box reveal">
-
-
-                    <div class="section-number">
-                        09 / CONTACT
-                    </div>
-
-
-                    <h2>
-                        Let's work
-                        together.
-                    </h2>
-
-
-                    <p>
-
-                        I'm always interested in learning,
-                        building and connecting with people
-                        working on interesting problems.
-
-                    </p>
-
-
-                    <a
-                        href="mailto:bsaegananthensai@gmail.com"
-                        class="contact-email">
-
-                        bsaegananthensai@gmail.com
-
-                    </a>
-
-
-                    <div class="social-links">
-
-
-                        <a
-                            href="https://github.com/AEGANANTHEN"
-                            target="_blank"
-                            class="social">
-
-                            GitHub ↗
-
-                        </a>
-
-
-                        <a
-                            href="https://www.linkedin.com/in/aegananthen-sai-735301329/"
-                            target="_blank"
-                            class="social">
-
-                            LinkedIn ↗
-
-                        </a>
-
-
-                        <a
-                            href="mailto:bsaegananthensai@gmail.com"
-                            class="social">
-
-                            Email ↗
-
-                        </a>
-
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-content">
-
-                <div>
-                    © 2026 AeganAnthen Sai
-                </div>
-
-                <div>
-                    Designed & Built by AeganAnthen
                 </div>
 
             </div>
 
         </div>
 
-    </footer>
+    </div>
+
+</section>
 
 
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================== -->
 
-    <script>
+<!-- =========================================================
+     CERTIFICATIONS
+========================================================= -->
 
+<section>
 
-        /* =====================================================
-           MOBILE NAVIGATION
-        ===================================================== */
+    <div class="container reveal">
 
-        const menuButton =
-            document.getElementById("menuButton");
-
-        const navLinks =
-            document.getElementById("navLinks");
+        <h2 class="section-title">
+            <span>Certifications</span>
+        </h2>
 
 
-        menuButton.addEventListener("click", () => {
+        <div class="cert-grid">
 
-            navLinks.classList.toggle("active");
+
+            <div class="cert-card">
+
+                <h3>
+                    The Bits and Bytes of Computer Networking
+                </h3>
+
+                <p>
+                    Google / Coursera · 2026
+                </p>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    World Wide CTF 2025
+                </h3>
+
+                <p>
+                    World Wide Flags · 2025
+                </p>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <h3>
+                    Red Team Essentials
+                </h3>
+
+                <p>
+                    MITRE ATT&CK Framework · 2024
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LEADERSHIP
+========================================================= -->
+
+<section>
+
+    <div class="container reveal">
+
+        <h2 class="section-title">
+            Leadership & <span>Activities</span>
+        </h2>
+
+
+        <div class="leadership-card">
+
+            <div class="leadership-icon">
+                ★
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Discipline & Volunteer Lead
+                </h3>
+
+                <p>
+                    VITKULT, VIT Bhopal University · 2026 – Present
+                </p>
+
+                <p style="margin-top:8px;">
+                    Involved in volunteer management, responsibility
+                    allocation, crowd management and security coordination
+                    under event management.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    id="contact"
+    class="contact">
+
+    <div class="container reveal">
+
+        <h2 class="section-title">
+            Get In <span>Touch</span>
+        </h2>
+
+
+        <p class="contact-description">
+            Interested in working together or have an opportunity?
+            Feel free to reach out.
+        </p>
+
+
+        <div class="contact-items">
+
+
+            <a
+                href="mailto:bsaegananthensai@gmail.com"
+                class="contact-item">
+
+                ✉
+                bsaegananthensai@gmail.com
+
+            </a>
+
+
+            <a
+                href="tel:+918667569312"
+                class="contact-item">
+
+                ☎
+                +91 8667569312
+
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/aegananthen-sai-735301329/"
+                target="_blank"
+                class="contact-item">
+
+                LinkedIn
+
+            </a>
+
+
+            <a
+                href="https://github.com/AEGANANTHEN"
+                target="_blank"
+                class="contact-item">
+
+                GitHub
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 AxgaNanthen Sai. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    /* Close mobile menu after clicking */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+            });
 
         });
 
 
-        document
-            .querySelectorAll(".nav-links a")
-            .forEach(link => {
 
-                link.addEventListener("click", () => {
+    /* =========================================================
+       ACTIVE NAVIGATION
+    ========================================================= */
 
-                    navLinks.classList.remove("active");
+    const sections =
+        document.querySelectorAll("section");
 
-                });
-
-            });
-
-
-        /* =====================================================
-           HEADER ON SCROLL
-        ===================================================== */
-
-        const header =
-            document.getElementById("header");
+    const links =
+        document.querySelectorAll(".nav-links a");
 
 
-        window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", () => {
 
-            if (window.scrollY > 30) {
+        let current = "";
 
-                header.classList.add("scrolled");
+        sections.forEach(section => {
 
-            } else {
+            const sectionTop =
+                section.offsetTop - 120;
 
-                header.classList.remove("scrolled");
+            if (
+                window.scrollY >= sectionTop
+            ) {
+
+                current =
+                    section.getAttribute("id");
 
             }
 
         });
 
 
-        /* =====================================================
-           SCROLL REVEAL
-        ===================================================== */
+        links.forEach(link => {
 
-        const revealElements =
-            document.querySelectorAll(".reveal");
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href")
+                === "#" + current
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    });
 
 
-        const observer =
-            new IntersectionObserver(
 
-                entries => {
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
 
-                    entries.forEach(entry => {
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
-                        if (entry.isIntersecting) {
 
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                        observer.unobserve(
                             entry.target
-                                .classList
-                                .add("visible");
+                        );
 
-                        }
+                    }
 
-                    });
+                });
 
-                },
+            },
 
-                {
-                    threshold: 0.1
-                }
+            {
+                threshold: 0.12
+            }
 
-            );
-
-
-        revealElements.forEach(element => {
-
-            observer.observe(element);
-
-        });
+        );
 
 
-        /* =====================================================
-           ACTIVE NAVIGATION
-        ===================================================== */
+    revealElements.forEach(element => {
 
-        const sections =
-            document.querySelectorAll("section");
+        observer.observe(element);
 
-        const navigationLinks =
-            document.querySelectorAll(".nav-links a");
+    });
 
 
-        window.addEventListener("scroll", () => {
 
-            let current = "";
+    /* =========================================================
+       THEME BUTTON
+    ========================================================= */
 
-
-            sections.forEach(section => {
-
-                const sectionTop =
-                    section.offsetTop - 150;
-
-                const sectionHeight =
-                    section.clientHeight;
+    const themeBtn =
+        document.getElementById("themeBtn");
 
 
-                if (
-                    window.scrollY >= sectionTop &&
-                    window.scrollY < sectionTop + sectionHeight
-                ) {
+    themeBtn.addEventListener("click", () => {
 
-                    current =
-                        section.getAttribute("id");
+        document.body.classList.toggle(
+            "light-mode"
+        );
 
-                }
+        if (
+            document.body.classList.contains(
+                "light-mode"
+            )
+        ) {
 
-            });
+            themeBtn.textContent = "☀";
+
+            document.body.style.background =
+                "#f5f7fb";
+
+            document.body.style.color =
+                "#111827";
+
+        } else {
+
+            themeBtn.textContent = "☾";
+
+            document.body.style.background =
+                "";
+
+            document.body.style.color =
+                "";
+
+        }
+
+    });
 
 
-            navigationLinks.forEach(link => {
-
-                link.style.color = "";
-
-                if (
-                    link.getAttribute("href") ===
-                    "#" + current
-                ) {
-
-                    link.style.color = "white";
-
-                }
-
-            });
-
-        });
-
-
-    </script>
+</script>
 
 
 </body>
-
 </html>
